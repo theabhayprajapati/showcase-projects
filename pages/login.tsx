@@ -1,8 +1,10 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 const LoginPage = () => {
-    const {data:session} = useSession()
+    const {data:session}:any = useSession()
+    const router = useRouter()
   return (
     <div>
         {
@@ -18,7 +20,15 @@ const LoginPage = () => {
                 <button onClick={() => signOut()}>
                     sign Out
                 </button>
-
+                <h1> Loggedd in as
+                    {session.user.username}
+                </h1>
+                <h1>
+                    your user name is {session.user.username}
+                </h1>
+                <button onClick={() =>router.push('/admin')}>
+                  To to admin dashboard
+                </button>
             </div>
 
         }

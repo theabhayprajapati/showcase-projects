@@ -11,8 +11,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        this is linktree
-
+        this is linktree ehi sis hoem aapahe
       </main>
 
       
