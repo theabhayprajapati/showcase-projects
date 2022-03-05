@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='w-[100%] relative min-h-screen '>
+      <main className='w-[100%] relative min-h-screen mx-auto'>
         <div className='absolute grid place-items-center w-full  h-full'>
           <div className=' grid place-items-center gap-3 '>
             <h2 className='md:text-8xl  text-transparent bg-clip-text bg-gradient-to-br from-pink-400  to-purple-600 text-3xl font-bold text-center '>
