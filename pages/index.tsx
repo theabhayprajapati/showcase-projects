@@ -11,7 +11,7 @@ const Index = () => {
       </Head>
       <main>
         <section className='min-w-full min-h-screen relative '>
-          <div className='max-w-3xl mx-auto w-full  absolute border top-[50%]  left-[50%] transform translate-x-[-50%] translate-y-[-50%] '>
+          <div className='max-w-3xl mx-auto w-full  absolute top-[50%]  left-[50%] transform translate-x-[-50%] translate-y-[-50%] '>
             <div className='items-center grid place-items-center gap-3  '>
               <h1 className='md:text-6xl  text-transparent bg-clip-text bg-gradient-to-br from-pink-400  to-purple-600 text-6xl font-bold text-center '>
                 The only link you will ever need.
@@ -19,7 +19,7 @@ const Index = () => {
               <button className='bg-black p-1 px-3 rounded-full text-white text-2xl'>
                 Get Started
               </button>
-              <div className='flex justify-center  border-purple-500 rounded-full px-2 py-1 items-center  text-xl'>
+              <div className='flex justify-center border-2  border-purple-500 rounded-full px-2 py-1 items-center  text-xl'>
                 <h1 className='text-center'>
                   branchesx/
                 </h1>

@@ -16,7 +16,7 @@ const UserPage = () => {
     // let ColRef = doc(db, "users", "theabhayprajapati")
     // console.log(username, "USERNAME")
     const userData = async (username: any) => {
-      const docRef = doc(db, "user", "theabhayprajapati");
+      const docRef = doc(db, "user", username);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         setuserData(docSnap.data());
@@ -36,9 +36,13 @@ const UserPage = () => {
   }, [username])
   console.log(userData, "SERVER DATA")
   console.log(userData.avatar || userData.profile_image_url, "hti si ssdavaura")
+
+
+
+
   return (
 
-    <div>
+    <div className='font-Monserat min-w-full min-h-screen bg-stone-700'>
       {
         !userData ? <div>
           <h1>User Page</h1>
@@ -46,33 +50,65 @@ const UserPage = () => {
             {user}
           </h1>
         </div>
-          : <div>
-            <h1>User account</h1>
-
-            <h1>
+          :
+          <div className="max-w-xl h-full  mx-auto flex flex-col items-center  p-10">
+            <div className="" tabIndex={0}>
+              <img src={userData.avatar} alt="Abhay Prajapati" className="h-20 w-20 rounded-full ring ring-gray-600" />
+            </div>
+            <button className="font-semibold rounded-lg">
               {userData.name}
-            </h1>
-            <h1>
-              {userData.screen_name}
-            </h1>
-            <h1>
-              {userData.avatar}
-            </h1>
-            <section>
+            </button>
+            <button className='text-lg text-gray-600'>
+              @{userData.username}
+            </button>
+            <h2 className='flex'>
+              <button className='nametitle text-gray-700 hover:text-gray-600 focus:text-black rounded-lg' onClick={() => router.push('https://nextjs.org/')}>Next JS </button>{''} / <button className='nametitle hover:text-yellow-500 focus:text-yellow-500 rounded-lg' onClick={() => router.push('https://firebase.google.com/')}> Firebase</button>
+            </h2>
+
+
+
+
+
+            <div className="md:flex items-center mt-2 md:text-2xl space-x-2  text-sm ">
+              <button className='nametitle bg-blue-400 px-2 text-white rounded-lg' onClick={() => router.push('https://twitter.com/AbhayPrajapati_')}>Twitter</button>
+
+
+              <button className='nametitle bg-gradient-to-r from-pink-400 to-orange-300 px-2 text-white rounded-lg' onClick={() => router.push('https://')}>Instagram</button>
+
+
+              <button className='nametitle bg-green-700 px-2 text-white rounded-lg' onClick={() => router.push('https://github.com/theabhayprajapati/')}>Github</button>
+
+
+              <button className='nametitle bg-[#0e76a8] px-2 text-white rounded-lg' onClick={() => router.push('https://www.linkedin.com/in/abhayprajaapati/')}>LinkedIn</button>
+            </div>
+
+
+
+            <div className='grid grid-cols-1 w-full mt-10 gap-y-5'>
               {
-                userProjects &&
-                userProjects.map((project: any) => {
+                userProjects && userProjects.map((project: any) => {
                   return (
-                    <div key={project.id}>
-                      <h1>{project.data().projectname}</h1>
-                      <h1>{project.data().userposition}</h1>
-                      <h1>{project.data().link}</h1>
-                      <h1>{project.data().note}</h1>
-                    </div>
+
+                    <button key={project.id} onClick={() => router.push(project.data().link)} className='project-btn '>
+
+                      <h1 className='font-bold text-lg'>
+                        {project.data().projectname}
+                        {/* //todo: Portfolio name */}
+                      </h1>
+                      <p className="text-base line-clamp-2">
+                        {
+                          project.data().note
+                        }
+                      </p>
+                    </button>
+
+
                   )
                 })
               }
-            </section>
+
+            </div>
+
           </div>
 
       }

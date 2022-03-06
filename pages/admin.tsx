@@ -82,96 +82,9 @@ const AdminPage = () => {
                         sign In
                     </button>
                 </div>
-                    : <div>
-                        <h1>Admin Page</h1>
-                        <button onClick={() => signOut()}>
-                            sign Out
-                        </button>
-                        <main>
-                            <h1>
-                                {username}
-                            </h1>
-                            <h1>
-                                {userData.name}
-                            </h1>
-                            <h1>
-                                {userData.screen_name}
-                            </h1>
-                            <h1>
-                                {userData.avatar}
-                            </h1>
-                            {
-                                userData && <h1>
-                                    {userData.description}
-                                </h1>
-                            }
-                        </main>
-                        <section>
-                            {!userData ? <h1>
-                                Add description
-                            </h1> : <h1>
-                                Edit description
-                            </h1>}
-                            <input type="text" placeholder="Add desciprtion" value={descroption} onChange={(e: any) => setdescroption(e.target.value)} />
-                            <button onClick={() => addDescriptions()}>
-                                Add Descriptions
-                            </button>
-                        </section>
-                        {
-                            addProject && addProject.map((item: any) => {
-                                return <div className='flex' key={item.id}>
-                                    <h1>
-                                        {item.data().projectname}
-                                    </h1>
-                                    <h1>
-
-                                    </h1>
-                                    <h1>
-                                        {item.data().userposition}
-                                    </h1>
-                                    <h1>
-                                        {item.data().link}
-                                    </h1>
-                                    <h1>
-
-                                    </h1>
-                                    <h1>
-                                        {item.data().note}
-                                    </h1>
-                                    <button onClick={() => deleteuserProject(item.id)}>
-                                        🥫
-                                    </button>
-
-                                </div>
-
-                            })
-                        }
-                        <section>
-                            { }
-                            <h1>
-                                Add Projects
-                            </h1>
-                            <button onClick={() => setshowaddProject(!showaddProject)}>
-                                ➕
-                            </button>
-                            {
-                                showaddProject && <form action="">
-                                    <input type="text" value={values.projectname} onChange={(e: any) => handleInputChange(e)}
-                                        name="projectname" aria-label='company' placeholder="Project Name"
-                                    />
-                                    <input type="text" value={values.note} onChange={(e: any) => handleInputChange(e)}
-                                        name="note" aria-label='company' placeholder="Note"
-                                    /><input type="text" value={values.link} onChange={(e: any) => handleInputChange(e)}
-                                        name="link" aria-label='company' placeholder="Link"
-                                    /><input type="text" value={values.userposition} onChange={(e: any) => handleInputChange(e)}
-                                        name="userposition" aria-label='company' placeholder="User Position"
-                                    />
-                                    <button onClick={(e: any) => addProjectsDB(username, e)}>
-                                        submit
-                                    </button>
-                                </form>
-                            }
-                        </section>
+                    : 
+                    <div>
+                        
                     </div>
             }
         </div>

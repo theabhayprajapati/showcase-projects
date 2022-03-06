@@ -4,3 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .btn-blue {
+      @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+    }
+    .projecttitle {
+       @apply grid place-items-center p-2
+    }
+    .nametitle {
+        @apply hover:scale-95 transition duration-150 ease-in-out transform  cursor-pointer
+    }
+    .project-btn {
+        @apply bg-white shadow-lg h-24 rounded-lg cursor-pointer hover:scale-95 transform transition duration-200 ease-out projecttitle focus:scale-95
+    }
+  }
+  
