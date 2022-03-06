@@ -48,7 +48,7 @@ const Index = () => {
                 </div>
                 <div className='text-7xl py-20 bg-black md:py-32 font-bold  p-5 rounded-3xl shadow-xl'>
                   <h1 className='text-white'>
-                    No limits in addin project ever.
+                    No limits on adding project ever.
                   </h1>
                 </div>
               </div>
